@@ -1,6 +1,4 @@
-using System;
-
-namespace ASPNET.Cadastro.App.Models {
+namespace ASPNET.Cadastro.App.ViewModels {
     public class ErrorViewModel {
         public string RequestId { get; set; }
 
