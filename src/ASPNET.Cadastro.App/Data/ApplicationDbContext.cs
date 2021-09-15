@@ -10,6 +10,7 @@ namespace ASPNET.Cadastro.App.Data {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) {
         }
+        public DbSet<ASPNET.Cadastro.App.ViewModels.ProdutoViewModel> ProdutoViewModel { get; set; }
         
     }
 }

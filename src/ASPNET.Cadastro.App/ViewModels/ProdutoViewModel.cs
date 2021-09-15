@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using ASPNET.Business.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using ASPNET.Cadastro.App.Extensions;
 using Microsoft.AspNetCore.Http;
 
 namespace ASPNET.Cadastro.App.ViewModels
@@ -26,11 +27,12 @@ namespace ASPNET.Cadastro.App.ViewModels
         public string Descricao { get; set; }
 
         [DisplayName("Imagem do Produto")]
-        // public IFormFile ImagemUpload { get; set; }
+        [NotMapped]
+        public IFormFile ImagemUpload { get; set; }
 
         public string Imagem { get; set; }
 
-        // [Moeda]
+        [Moeda]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
 
@@ -42,6 +44,7 @@ namespace ASPNET.Cadastro.App.ViewModels
 
         public FornecedorViewModel Fornecedor { get; set; }
 
-        // public IEnumerable<FornecedorViewModel> Fornecedores { get; set; }
+        [NotMapped]
+        public IEnumerable<FornecedorViewModel> Fornecedores { get; set; }
     }
 }

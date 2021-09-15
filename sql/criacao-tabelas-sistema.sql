@@ -1,16 +1,4 @@
-﻿IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
-BEGIN
-    CREATE TABLE [__EFMigrationsHistory] (
-        [MigrationId] nvarchar(150) NOT NULL,
-        [ProductVersion] nvarchar(32) NOT NULL,
-        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
-    );
-END;
-GO
-
-BEGIN TRANSACTION;
-GO
-
+﻿/*
 CREATE TABLE [Fornecedores] (
     [Id] uniqueidentifier NOT NULL,
     [Nome] varchar(200) NOT NULL,
@@ -32,7 +20,7 @@ CREATE TABLE [Enderecos] (
     [Cidade] varchar(100) NOT NULL,
     [Estado] varchar(50) NOT NULL,
     CONSTRAINT [PK_Enderecos] PRIMARY KEY ([Id]),
-    CONSTRAINT [FK_Enderecos_Fornecedores_FornecedorId] FOREIGN KEY ([FornecedorId]) REFERENCES [Fornecedores] ([Id]) ON DELETE SET NULL
+    CONSTRAINT [FK_Enderecos_Fornecedores_FornecedorId] FOREIGN KEY ([FornecedorId]) REFERENCES [Fornecedores] ([Id]) 
 );
 GO
 
@@ -46,30 +34,13 @@ CREATE TABLE [Produtos] (
     [DataCadastro] datetime2 NOT NULL,
     [Ativo] bit NOT NULL,
     CONSTRAINT [PK_Produtos] PRIMARY KEY ([Id]),
-    CONSTRAINT [FK_Produtos_Fornecedores_FornecedorId] FOREIGN KEY ([FornecedorId]) REFERENCES [Fornecedores] ([Id]) ON DELETE SET NULL
-);
+    CONSTRAINT [FK_Produtos_Fornecedores_FornecedorId] FOREIGN KEY ([FornecedorId]) REFERENCES [Fornecedores] ([Id]) 
+);*/
 GO
 
 CREATE UNIQUE INDEX [IX_Enderecos_FornecedorId] ON [Enderecos] ([FornecedorId]);
 GO
 
 CREATE INDEX [IX_Produtos_FornecedorId] ON [Produtos] ([FornecedorId]);
-GO
-
-INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20210819195157_Inicial', N'5.0.9');
-GO
-
-COMMIT;
-GO
-
-BEGIN TRANSACTION;
-GO
-
-INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20210820183634_Initial', N'5.0.9');
-GO
-
-COMMIT;
 GO
 

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNET.Business", "src\ASPN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNET.Data", "src\ASPNET.Data\ASPNET.Data.csproj", "{A902CEFE-DCBE-4E8D-A858-EE94E64DB2C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET.Cadastro.App", "src\ASPNET.Cadastro.App\ASPNET.Cadastro.App.csproj", "{102C53DA-2EAD-4635-9278-776EBC4C085D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNET.Cadastro.App", "src\ASPNET.Cadastro.App\ASPNET.Cadastro.App.csproj", "{102C53DA-2EAD-4635-9278-776EBC4C085D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -22,7 +22,8 @@ namespace ASPNET.Data.Repository
 
         public async Task<Fornecedor> ObterFornecedorProdutoEndereco(Guid id)
         {
-            return await Db.Fornecedores.AsNoTracking()
+            return await Db.Fornecedores
+                .AsNoTracking()
                 .Include(c => c.Produtos)
                 .Include(c => c.Endereco)
                 .FirstOrDefaultAsync(c => c.Id == id);
